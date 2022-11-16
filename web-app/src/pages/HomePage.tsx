@@ -1,3 +1,4 @@
+import ErrorScreen from "../components/home/ErrorScreen";
 import ProductList from "../components/home/ProductList";
 import { useGetProducts } from "../hooks/use_fetch_products";
 
@@ -9,7 +10,7 @@ function HomePage() {
   }
 
   if (error) {
-    return <p>Error while loading products</p>;
+    return <ErrorScreen />;
   }
 
   return (
