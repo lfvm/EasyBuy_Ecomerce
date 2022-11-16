@@ -1,6 +1,8 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Button from "@mui/material/Button";
-import { Product } from "../../types/product";
+import { useAppContext } from "../../context/AppContext";
+import { CartPoduct, Product } from "../../types/product";
+import { toast } from "react-hot-toast";
 
 interface PageLayoutInterface {
   product: Product;
@@ -8,6 +10,14 @@ interface PageLayoutInterface {
 
 function ProductCard(props: PageLayoutInterface): JSX.Element {
   const { product } = props;
+
+  const { cart, setCart } = useAppContext();
+
+  function addProductToCart(cartProduct: CartPoduct) {
+    const newCart = [...cart, cartProduct];
+    setCart(newCart);
+    toast.success("Added product to your cart");
+  }
 
   return (
     <div className="product_card px-4 bg-white w-[200px] h-[400px] shadow-sm flex flex-col items-center justify-between hover:shadow-md mb-4 rounded-lg">
@@ -34,6 +44,7 @@ function ProductCard(props: PageLayoutInterface): JSX.Element {
         variant="contained"
         color="info"
         sx={{ mb: 2 }}
+        onClick={() => addProductToCart({ product, quantity: 1 })}
       >
         Add To Cart
       </Button>
