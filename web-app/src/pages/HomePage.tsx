@@ -1,20 +1,21 @@
-import ProductCard from "../components/ui/ProductCard";
+import ProductList from "../components/home/ProductList";
 import { useGetProducts } from "../hooks/use_fetch_products";
 
 function HomePage() {
-  const { products, loading } = useGetProducts();
+  const { products, loading, error } = useGetProducts();
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error while loading products</p>;
+  }
+
   return (
     <>
       <div className="flex items-start justify-center">
-        {loading === true ? (
-          <p>Loading...</p>
-        ) : (
-          <div className="grid gap-1 grid-cols-2 lg:grid-cols-4 md:grid-cols-4">
-            {products.map((product) => (
-              <ProductCard product={product} key={product.id} />
-            ))}
-          </div>
-        )}
+        <ProductList products={products!} />
       </div>
     </>
   );
