@@ -1,6 +1,6 @@
 import { CartPoduct } from "../../types/product";
 import { useAppContext } from "../../context/AppContext";
-import CartProductContainer from "./CartProductContainer";
+import CartProductContainer from "../ui/CartProductContainer";
 
 function CartItems() {
   const { cart } = useAppContext();
