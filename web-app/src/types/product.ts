@@ -9,3 +9,8 @@ export interface GetProductResponse {
   msg: string;
   products: Product[];
 }
+
+export interface CartPoduct {
+  product: Product;
+  quantity: number;
+}
