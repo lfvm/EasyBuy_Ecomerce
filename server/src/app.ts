@@ -3,7 +3,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app: Express = express();
+const cors = require("cors");
 const port = process.env.PORT;
+app.use(cors());
 
 app.use("/api/products", require("./routes/product_routes"));
 
