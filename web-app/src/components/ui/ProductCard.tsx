@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import { useAppContext } from "../../context/AppContext";
 import { CartPoduct, Product } from "../../types/product";
 import { toast } from "react-hot-toast";
+import isItemInCart from "../../helpers/check_product_in_cart";
 
 interface PageLayoutInterface {
   product: Product;
@@ -14,8 +15,27 @@ function ProductCard(props: PageLayoutInterface): JSX.Element {
   const { cart, setCart } = useAppContext();
 
   function addProductToCart(cartProduct: CartPoduct) {
-    const newCart = [...cart, cartProduct];
-    setCart(newCart);
+    //Update quantity of a product if it already exists on cart
+
+    if (isItemInCart(cartProduct, cart)) {
+      const newCart = cart.map((item) => {
+        if (item.product.id === cartProduct.product.id) {
+          const updatedItem: CartPoduct = {
+            product: item.product,
+            quantity: cartProduct.quantity + 1,
+          };
+
+          return updatedItem;
+        }
+
+        return item;
+      });
+      setCart(newCart);
+    } else {
+      const newCart = [...cart, cartProduct];
+      setCart(newCart);
+    }
+
     toast.success("Added product to your cart");
   }
 
