@@ -19,9 +19,9 @@ const getProducts = async (req: Request, res: Response) => {
       products: data,
     });
   } catch (error) {
-    console.log("GET AREAS ERROR:", error);
+    console.log("GET PRODUCTS ERROR:", error);
     res.status(500).json({
-      msg: "Hubo un error obteniendo las áreas",
+      msg: "An error ocurred while fetching products",
     });
   }
 };
