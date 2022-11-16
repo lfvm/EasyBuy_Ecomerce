@@ -8,7 +8,7 @@ interface State {
   error: boolean;
 }
 
-export const useGetProducts = () => {
+export const useProducts = (filter: string) => {
   const [state, setState] = useState<State>({
     products: [],
     loading: true,
@@ -18,12 +18,15 @@ export const useGetProducts = () => {
   useEffect(() => {
     getProducts().then((apiProducts) =>
       setState({
-        products: apiProducts,
+        products:
+          filter === "desc"
+            ? apiProducts!.sort((a, b) => b.price - a.price)
+            : apiProducts!.sort((a, b) => a.price - b.price),
         loading: false,
         error: apiProducts !== null ? false : true,
       })
     );
-  }, []);
+  }, [filter]);
 
   return state;
 };
