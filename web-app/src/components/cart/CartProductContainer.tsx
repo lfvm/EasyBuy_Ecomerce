@@ -72,7 +72,7 @@ function CartProductContainer(props: PageLayoutInterface) {
 
       {/* total-price */}
       <p className="price font-medium text-[15px] w-[20px]">
-        ${cartProduct.product.price * cartProduct.quantity}
+        ${(cartProduct.product.price * cartProduct.quantity).toFixed(2)}
       </p>
       <IconButton onClick={() => removeItem()}>
         <DeleteIcon sx={{ color: "#dc2626" }} />

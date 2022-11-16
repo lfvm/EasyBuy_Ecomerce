@@ -20,7 +20,7 @@ function CartDetails() {
       <div className="order-data flex items-center justify-center w-full flex-col divide-y-2 font-medium text-[15px]">
         <div className="flex w-full items-center justify-between p-1">
           <p>Subtotal</p>
-          <p>${totalPrice}</p>
+          <p>${totalPrice.toFixed(2)}</p>
         </div>
         <div className="flex w-full items-center justify-between p-1 text-[red]">
           <p>Discounts</p>
@@ -28,7 +28,7 @@ function CartDetails() {
         </div>
         <div className="flex w-full items-center justify-between p-1 text-[green]">
           <p>Total</p>
-          <p>${totalPrice}</p>
+          <p>${totalPrice.toFixed(2)}</p>
         </div>
       </div>
       <Button
