@@ -1,20 +1,24 @@
 import axios from "axios";
 import { GetProductResponse, Product } from "../types/product";
 
-export default async function getProducts(): Promise<Product[]> {
+export default async function getProducts(): Promise<Product[] | null> {
   try {
-    const { data } = await axios.get<GetProductResponse>(
+    const { data, status } = await axios.get<GetProductResponse>(
       `${process.env.REACT_APP_API_URL}/api/products`
     );
+
+    if (status !== 200) {
+      return null;
+    }
 
     return data.products;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.log("AXIOS ERROR: API OFFLINE");
-      return [];
+      return null;
     } else {
       console.log("GET PRODUCTS ERROR: ", error);
-      return [];
+      return null;
     }
   }
 }
