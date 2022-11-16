@@ -6,16 +6,20 @@ import { theme } from "./theme";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
+import AppProvider from "./context/AppContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
+      <AppProvider>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </AppProvider>
     </React.StrictMode>
   </BrowserRouter>
 );
