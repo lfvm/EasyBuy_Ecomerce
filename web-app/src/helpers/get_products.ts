@@ -1,10 +1,12 @@
 import axios from "axios";
 import { GetProductResponse, Product } from "../types/product";
 
-export default async function getProducts(): Promise<Product[] | null> {
+export default async function getProducts(
+  sort: string
+): Promise<Product[] | null> {
   try {
     const { data, status } = await axios.get<GetProductResponse>(
-      `${process.env.REACT_APP_API_URL}/api/products`
+      `${process.env.REACT_APP_API_URL}/api/products?sort=${sort}`
     );
 
     if (status !== 200) {
