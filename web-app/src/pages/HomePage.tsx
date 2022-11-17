@@ -6,7 +6,6 @@ import { useProducts } from "../hooks/use_products";
 
 function HomePage() {
   const [filter, setFilter] = useState<string>("desc");
-
   const { products, loading, error } = useProducts(filter);
 
   if (loading) {
