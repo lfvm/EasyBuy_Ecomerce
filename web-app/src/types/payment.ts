@@ -1,4 +1,4 @@
 export interface PaymentIntentResponse {
-    paymentIntent?: string | undefined | null;
+    paymentIntent?: string | undefined ;
     success: true
 }
