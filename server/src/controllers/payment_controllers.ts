@@ -5,7 +5,7 @@ const createPaymentIntent = async (req: Request, res: Response) => {
   try {
     //Creates a new payment intent with amount passed in from the client
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: parseFloat(req.body.amount) * 100,
+      amount: parseInt(req.body.amount) * 100,
       currency: "USD",
       payment_method_types: ["card"],
     });
