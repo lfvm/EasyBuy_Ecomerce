@@ -15,6 +15,7 @@ const getProducts = async (req: Request, res: Response) => {
       });
     }
 
+    // Filtering products by price manually because fakestore api only sorts products by id
     return res.status(200).json({
       msg: "Obtained products successfully",
       products:
