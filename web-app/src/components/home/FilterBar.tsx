@@ -14,7 +14,7 @@ function FilterBar(props: PageLayoutInterface) {
   const { setFilter, filter } = props;
 
   return (
-    <div className="filter-bar w-full ml-auto mr-auto border bg-white rounded-lg mb-4 flex items-center justify-between p-4">
+    <div className="filter-bar w-full ml-auto mr-auto mb-4 flex items-center justify-between p-4">
       <h2>Filter price: </h2>
       <FormControl>
         <RadioGroup

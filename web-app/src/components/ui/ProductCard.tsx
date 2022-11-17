@@ -40,7 +40,7 @@ function ProductCard(props: PageLayoutInterface): JSX.Element {
   }
 
   return (
-    <div className="product_card px-4 bg-white w-[200px] h-[400px] shadow-sm flex flex-col items-center justify-between hover:shadow-md mb-4 rounded-lg">
+    <div className="product_card border px-4 bg-slate-50 w-[200px] h-[400px] shadow-sm flex flex-col items-center justify-between hover:shadow-md mb-4 rounded-lg">
       {/* Img */}
       <img
         src={`${product.image}`}
