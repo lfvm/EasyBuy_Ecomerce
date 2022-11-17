@@ -7,7 +7,7 @@ function NotFound() {
     <div className="flex flex-col items-center justify-center h-screen">
       <img
         src="/imgs/404-img.png"
-        alt="product"
+        alt="not-found"
         className="w-[300px] h-[300px] object-contain"
       />
       <h1>Oops! the page that you are trying to reach does not exists</h1>

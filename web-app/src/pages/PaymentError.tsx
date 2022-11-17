@@ -22,7 +22,7 @@ function PaymentError() {
     <div className="flex flex-col items-center justify-center h-screen">
       <img
         src="/imgs/404-img.png"
-        alt="product"
+        alt="error"
         className="w-[300px] h-[300px] object-contain"
       />
       <h1 className="text-xl mb-4">

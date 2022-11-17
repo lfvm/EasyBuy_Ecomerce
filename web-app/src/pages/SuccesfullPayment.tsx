@@ -7,7 +7,7 @@ function SuccessfullPayment() {
     <div className="flex flex-col items-center justify-center h-screen">
       <img
         src="/imgs/success.png"
-        alt="product"
+        alt="successfull-payment"
         className="w-[300px] h-[300px] object-contain"
       />
       <h1 className="text-xl mb-4">
