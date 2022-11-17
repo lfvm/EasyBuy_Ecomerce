@@ -1,6 +1,7 @@
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { useAppContext } from "../../context/AppContext";
 
 function CartDetails() {
@@ -31,14 +32,16 @@ function CartDetails() {
           <p>${totalPrice.toFixed(2)}</p>
         </div>
       </div>
-      <Button
-        startIcon={<AttachMoneyIcon />}
-        variant="contained"
-        color="info"
-        sx={{ mb: 2 }}
-      >
-        Go to Checkout
-      </Button>
+      <NavLink to={`/checkout?amount=${totalPrice}`}>
+        <Button
+          startIcon={<AttachMoneyIcon />}
+          variant="contained"
+          color="info"
+          sx={{ mb: 2 }}
+        >
+          Go to Checkout
+        </Button>
+      </NavLink>
     </div>
   );
 }
