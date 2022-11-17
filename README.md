@@ -47,8 +47,11 @@ OneSevenTech Fullstack Engineer Assessment.
 
 After the last command a new window should open in your browser.
 
-It is very important to intialize api whenever running the web application, otherwise it will not
-run correctlty
+It is very important to intialize api whenever running the web application, otherwise
+the following error will ocurr:
+
+<img width="490" alt="Captura de Pantalla 2022-11-16 a la(s) 20 51 52" src="https://user-images.githubusercontent.com/57450093/202343037-4ae6205a-dc77-49b8-9112-c614914c8382.png">
+
 
 
 ## Screenshots
