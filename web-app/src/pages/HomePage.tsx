@@ -19,7 +19,7 @@ function HomePage() {
 
   return (
     <>
-      <div className="flex items-center justify-center flex-col">
+      <div className="flex items-center justify-center flex-col border bg-white rounded-lg shadow-lg">
         <FilterBar setFilter={setFilter} filter={filter} />
         <ProductList products={products!} />
       </div>
