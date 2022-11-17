@@ -4,6 +4,7 @@ import axios from "axios";
 
 const getProducts = async (req: Request, res: Response) => {
   try {
+    const { sort } = req.query;
     const { data, status } = await axios.get<Product[]>(
       "https://fakestoreapi.com/products?limit=20"
     );
@@ -16,7 +17,10 @@ const getProducts = async (req: Request, res: Response) => {
 
     return res.status(200).json({
       msg: "Obtained products successfully",
-      products: data,
+      products:
+        !sort || sort === "asc"
+          ? data.sort((a, b) => a.price - b.price)
+          : data.sort((a, b) => b.price - a.price),
     });
   } catch (error) {
     console.log("GET PRODUCTS ERROR:", error);
