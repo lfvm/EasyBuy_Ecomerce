@@ -16,13 +16,16 @@ export const useProducts = (filter: string) => {
   });
 
   useEffect(() => {
-    getProducts().then((apiProducts) =>
+    // move state to loading whenever filtering changes
+    setState({
+      loading: true,
+      products: [],
+      error: false,
+    });
+    getProducts(filter).then((apiProducts) =>
       setState({
-        products:
-          filter === "desc"
-            ? apiProducts!.sort((a, b) => b.price - a.price)
-            : apiProducts!.sort((a, b) => a.price - b.price),
         loading: false,
+        products: apiProducts,
         error: apiProducts !== null ? false : true,
       })
     );
