@@ -37,8 +37,6 @@ function CheckoutForm(props: PageLayoutInterface) {
     if (result.error) {
       navigate(`/payment-error?amount=${amount}`);
       toast.error(result.error.message);
-    } else {
-      toast.success("Se realizo el pago correctamente");
     }
   };
 
