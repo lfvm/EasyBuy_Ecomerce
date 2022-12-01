@@ -16,7 +16,7 @@ Simple and responsive ecomerce web app developed using Node.Js Express and React
 - Go to the project directory:
 
 ```bash
-  cd oneSeven_Ecomerce
+  cd EasyBuy_Ecomerce
 ```
 
 ### Initialize API
@@ -38,7 +38,7 @@ Simple and responsive ecomerce web app developed using Node.Js Express and React
 ### Initialize Web App
  - Open a new terminal and go to web app directory:
 ```bash
-  cd oneSeven_Ecomerce/web-app
+  cd EasyBuy_Ecomerce/web-app
 ```
  - Install dependencies and runn app
  ```bash
