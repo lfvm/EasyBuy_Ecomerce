@@ -1,7 +1,7 @@
 
-# One Seven Ecomerce App
+# Easy Buy Ecomerce App
 
-OneSevenTech Fullstack Engineer Assessment.
+Simple and responsive ecomerce web app developed using Node.Js Express and React.JS
 
 
 
