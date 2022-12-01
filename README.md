@@ -10,7 +10,7 @@ Simple and responsive ecomerce web app developed using Node.Js Express and React
 - Clone the project:
 
 ```bash
-  git clone https://github.com/lfvm/oneSeven_Ecomerce.git
+  git clone https://github.com/lfvm/EasyBuy_Ecomerce.git
 ```
 
 - Go to the project directory:
