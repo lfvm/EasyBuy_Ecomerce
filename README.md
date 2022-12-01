@@ -56,8 +56,7 @@ the following error will ocurr:
 
 ## Screenshots
 
-<img width="501" alt="app screenshot" src="https://user-images.githubusercontent.com/57450093/202343179-fc97b71a-a411-4918-b70a-c9c96037856e.png">
-
+<img width="495" alt="Captura de Pantalla 2022-12-01 a la(s) 17 46 52" src="https://user-images.githubusercontent.com/57450093/205182805-94cb67c1-9570-4a07-9717-d67d0274a28e.png">
 
 
 ## Features
